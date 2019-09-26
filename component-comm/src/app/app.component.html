@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h2>
+    {{ title }}!
+  </h2>
+</div>
+<h4>Parent Component</h4>
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Decrement</button>
+<br><br>
+Current count is: {{counter}}<br>
+<app-child1 [count]=counter (countChanged)="countChangedHandler($event)"></app-child1>
+
+<h4>Parent component recieves data from child using local variable</h4>
+<p>Current count is: {{child2.count}}</p>
+<br>
+<button (click)="child2.incrementChild2()">Increment</button>
+<button (click)="child2.decrementChild2()">Decrement</button>
+<app-child2 #child2></app-child2>
+
+<h4>Parent component recieves data from child using @ViewChild</h4>
+<p>Current count is: {{child3.count}}</p>
+<br>
+<button (click)="incrementChild3()">Increment</button>
+<button (click)="decrementChild3()">Decrement</button>
+<app-child3></app-child3>
